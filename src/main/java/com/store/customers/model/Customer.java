@@ -14,6 +14,8 @@ public class Customer {
     private String phoneNumber;
     private String email;
     private String address;
+    private String role;
+    private String password;
 
     public long getId() {
         return id;
@@ -53,5 +55,21 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

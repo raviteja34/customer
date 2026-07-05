@@ -3,6 +3,7 @@ package com.store.customers.service;
 import com.store.customers.model.Customer;
 import com.store.customers.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,6 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
-
 
     public List<Customer> getAllCustomer(){
         return customerRepository.findAll();
@@ -33,6 +33,11 @@ public class CustomerService {
         customer1.setEmail(customer.getEmail());
         customer1.setAddress(customer.getAddress());
         customer1.setPhoneNumber(customer.getPhoneNumber());
+        customer1.setPassword(customer.getPassword());
         return customerRepository.save(customer1);
+    }
+
+    public Customer findByUserName(String userName) {
+        return customerRepository.findByEmail(userName);
     }
 }

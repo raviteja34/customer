@@ -36,4 +36,8 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.updateCustomer(id,customer),HttpStatus.OK);
     }
 
+    @GetMapping("/user/{userName}")
+    public ResponseEntity<Customer> findByUserName(@PathVariable String userName){
+        return new ResponseEntity<>(customerService.findByUserName(userName),HttpStatus.OK);
+    }
 }
